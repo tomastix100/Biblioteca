@@ -1,0 +1,21 @@
+""" #Vistas basadas en clases
+    1. dispatch(): valida la peticion y elige que metodo HTTP se utilizo para la solicitud
+    2. http_method_not_alloweb(): retorna un arror cuando se utliza un metodo HTTP no soportado
+       o definido.
+    3. options()
+"""
+
+TODO: VISTAS BASADAS EN CLASES: TEMPLATEVIEW, VIEW
+    1. TEMPLATEVIEW: Cuando solo se mostrara un template
+    2. VIEW : Cuando se quiere colocar logica.
+
+TODO: VISTAS BASADAS EN CLASES: LISTVIEW
+    1. class ListadoAutor(ListView):
+            model = Autor
+            template_name = 'libro/listar_autor.html'
+            context_object_name = 'autores'
+            queryset = Autor.objects.filter(estado = True)
+
+TODO: Forms de Django Parte 2
+    1. 
+

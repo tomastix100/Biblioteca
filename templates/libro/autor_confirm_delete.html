@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block titulo %}
+BibliotecaTomas.com | Confirmación de la Eliminación
+{% endblock titulo %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <p><strong>¿ Desea eliminar el autor : {{ object.nombre }} {{ object.apellidos }}?</strong></p>
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'libro:listar_autor' %}" class="btn btn-primary">Cancelar</a>
+    </form>
+{% endblock body %}
