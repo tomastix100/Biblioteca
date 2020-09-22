@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth.decorators import login_required
 #from rest_framework.routers import DefaultRouter
 #from apps.libro.views import Inicio, AutorViewSet
 from apps.libro.views import Inicio
@@ -26,7 +25,7 @@ from apps.libro.views import Inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',login_required(Inicio.as_view()),name = 'index'),
+    path('',Inicio.as_view(),name = 'index'),
     path('libro/',include(('apps.libro.urls','libro'))),
 ]
 
