@@ -15,18 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from rest_framework.routers import DefaultRouter
-#from apps.libro.views import Inicio, AutorViewSet
+from django.contrib.auth.decorators import login_required
 from apps.libro.views import Inicio
+from apps.accounts.views import Login
 
-#router = DefaultRouter()
-#router.register(r'autores', AutorViewSet)
-#urlpatterns = router.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Inicio.as_view(),name = 'index'),
+    path('',login_required(Inicio.as_view()),name = 'index'),
     path('libro/',include(('apps.libro.urls','libro'))),
+    path('accounts/login/',Login.as_view(), name = 'login')
 ]
 
 
