@@ -5,7 +5,10 @@ BibliotecaTomas.com | Listado de Autores
 {% endblock titulo %}
 
 {% block body %}
-
+  <div class="text-right">
+    <a href="{% url 'libro:crear_autor' %}" class="btn btn-primary"><i class="fas fa-user-plus"></i>  Registrar autor</a>
+  </div>
+  
   {% if autores %}
       <div class="card">
           <div class="card-header">
