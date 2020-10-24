@@ -78,6 +78,7 @@ class ActualizarLibro(UpdateView):
     
 
 class EliminarLibro(DeleteView):
+    """Vista basada en clase para eliminar un Libro, la eliminacion solo se da al cambiar de estado"""
     model = Libro
     
     # No eliminarlo por completo sino que solo redifinir
